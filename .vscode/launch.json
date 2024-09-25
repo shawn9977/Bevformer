@@ -1,0 +1,33 @@
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Debug evaluate_ov.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/bevformer/evaluate_ov.py",
+            "console": "integratedTerminal",
+            "args": [
+                "/workspace/BEVFormer_tensorrt/configs/bevformer/bevformer_tiny_trt.py",
+                "/workspace/BEVFormer_tensorrt/checkpoints/ov/bevformer_tiny_epoch_24.xml"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"  // 这里可以修改为你想要使用的 GPU ID
+            }
+        },
+        {
+            "name": "Debug evaluate_pth.py",
+            "type": "python",
+            "request": "launch",
+            "program": "${workspaceFolder}/tools/bevformer/evaluate_pth.py",
+            "console": "integratedTerminal",
+            "args": [
+                "/workspace/BEVFormer_tensorrt/configs/bevformer/bevformer_tiny_trt.py",
+                "/workspace/BEVFormer_tensorrt/checkpoints/pytorch/bevformer_tiny_epoch_24.pth"
+            ],
+            "env": {
+                "CUDA_VISIBLE_DEVICES": "0"  // 这里可以修改为你想要使用的 GPU ID
+            }
+        },
+    ]
+}
